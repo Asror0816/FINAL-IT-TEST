@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT PLATFORM</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BOSHLASH OYNASI
+    ========================== -->
+
+    <div class="container" id="startScreen">
+
+        <div class="logo">
+            💻
+        </div>
+
+        <h1>FINAL IT TEST</h1>
+
+        <h2 id="startTitle">
+            IT bilimlaringizni sinang
+        </h2>
+
+        <p id="startDescription">
+            Ismingizni kiriting, sinfingiz va tilingizni tanlang.
+        </p>
+
+
+        <!-- ISM -->
+
+        <div class="input-group">
+
+            <label id="nameLabel">
+                O‘quvchi ismi:
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Ismingizni kiriting"
+            >
+
+        </div>
+
+
+        <!-- SINF -->
+
+        <div class="select-section">
+
+            <h3 id="classTitle">
+                Sinfni tanlang:
+            </h3>
+
+            <div class="class-buttons">
+
+                <button
+                    class="class-button active"
+                    data-class="7"
+                >
+                    7-sinf
+                </button>
+
+                <button
+                    class="class-button"
+                    data-class="8"
+                >
+                    8-sinf
+                </button>
+
+                <button
+                    class="class-button"
+                    data-class="9"
+                >
+                    9-sinf
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TIL -->
+
+        <div class="select-section">
+
+            <h3 id="languageTitle">
+                Tilni tanlang:
+            </h3>
+
+            <div class="language-buttons">
+
+                <button
+                    class="language-button active"
+                    data-lang="uz"
+                >
+                    🇺🇿 O‘zbekcha
+                </button>
+
+                <button
+                    class="language-button"
+                    data-lang="ru"
+                >
+                    🇷🇺 Русский
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MA'LUMOT -->
+
+        <div class="test-info">
+
+            <div class="info-card">
+
+                <strong>30</strong>
+
+                <span id="questionsInfo">
+                    Savol
+                </span>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>30</strong>
+
+                <span id="timeInfo">
+                    Daqiqa
+                </span>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>100</strong>
+
+                <span id="scoreInfo">
+                    Ball
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="startButton"
+            class="main-button"
+        >
+            Testni boshlash
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         TEST OYNASI
+    ========================== -->
+
+    <div
+        class="container test-container"
+        id="testScreen"
+    >
+
+        <div class="test-header">
+
+            <div>
+
+                <h2 id="testTitle">
+                    7-sinf testi
+                </h2>
+
+                <p id="studentDisplay"></p>
+
+            </div>
+
+
+            <div
+                class="timer"
+                id="timer"
+            >
+                15:00
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-container">
+
+            <div class="progress-bar">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+            <p id="progressText">
+                1 / 20
+            </p>
+
+        </div>
+
+
+        <!-- SAVOL -->
+
+        <div class="question-card">
+
+            <div
+                class="question-number"
+                id="questionNumber"
+            >
+                Savol 1
+            </div>
+
+
+            <h2 id="questionText">
+                Savol...
+            </h2>
+
+
+            <div
+                id="optionsContainer"
+                class="options"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="navigation">
+
+            <button
+                id="prevButton"
+                class="secondary-button"
+            >
+                ← Oldingi
+            </button>
+
+
+            <button
+                id="nextButton"
+                class="main-button"
+            >
+                Keyingi →
+            </button>
+
+        </div>
+
+
+        <!-- SAVOL RAQAMLARI -->
+
+        <div class="question-list">
+
+            <h3 id="questionListTitle">
+                Savollar
+            </h3>
+
+            <div id="questionNumbers"></div>
+
+        </div>
+
+
+        <button
+            id="finishButton"
+            class="finish-button"
+        >
+            Testni yakunlash
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         NATIJA OYNASI
+    ========================== -->
+
+    <div
+        class="container result-container"
+        id="resultScreen"
+    >
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+
+        <h1 id="resultTitle">
+            Test yakunlandi!
+        </h1>
+
+
+        <p id="resultStudent"></p>
+
+
+        <p
+            id="resultClass"
+            class="result-class"
+        ></p>
+
+
+        <div class="score-circle">
+
+            <span id="score">
+                0
+            </span>
+
+            <small>/100</small>
+
+        </div>
+
+
+        <h2 id="grade">
+            -
+        </h2>
+
+
+        <p id="gradeMessage"></p>
+
+
+        <div class="result-grid">
+
+            <div class="result-card correct">
+
+                <strong id="correctAnswers">
+                    0
+                </strong>
+
+                <span id="correctText">
+                    To‘g‘ri
+                </span>
+
+            </div>
+
+
+            <div class="result-card wrong">
+
+                <strong id="wrongAnswers">
+                    0
+                </strong>
+
+                <span id="wrongText">
+                    Noto‘g‘ri
+                </span>
+
+            </div>
+
+
+            <div class="result-card unanswered">
+
+                <strong id="unansweredAnswers">
+                    0
+                </strong>
+
+                <span id="unansweredText">
+                    Javobsiz
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="restartButton"
+            class="main-button"
+        >
+            Qaytadan boshlash
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
